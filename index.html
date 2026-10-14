@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แฟ้มสะสมผลงาน | ฐิติวรดา ก่อแก้ว (Academic Portfolio)</title>
-    <!-- Tailwind CSS -->
+    <title>Academic Portfolio - นางสาวฐิติวรดา ก่อแก้ว</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Prompt & Kanit) -->
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Prompt & Sarabun -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -22,504 +22,350 @@
                             50: '#f0f4f8',
                             100: '#d9e2ec',
                             200: '#bcccdc',
-                            500: '#334e68',
+                            600: '#334e68',
+                            700: '#1b365d',
                             800: '#102a43',
                             900: '#0b1b2b',
-                        },
-                        accent: {
-                            blue: '#2563eb',
-                            emerald: '#059669',
-                            amber: '#d97706'
                         }
                     },
                     fontFamily: {
-                        prompt: ['Prompt', 'sans-serif'],
-                        kanit: ['Kanit', 'sans-serif'],
+                        sans: ['Prompt', 'Sarabun', 'sans-serif'],
+                        serif: ['Sarabun', 'serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
         body {
             font-family: 'Prompt', sans-serif;
             background-color: #f8fafc;
-            color: #334155;
+            color: #1e293b;
         }
-        h1, h2, h3, h4, .font-heading {
-            font-family: 'Kanit', sans-serif;
-        }
-        
-        /* Custom Print Styles for PDF export */
         @media print {
-            .no-print {
-                display: none !important;
-            }
-            body {
-                background-color: #ffffff !important;
-                color: #000000 !important;
-            }
-            .print-border {
-                border: 1px solid #cbd5e1 !important;
-            }
-            .print-shadow-none {
-                box-shadow: none !important;
-            }
-            .page-break {
-                page-break-before: always;
-            }
+            .no-print { display: none !important; }
+            body { background-color: white !important; color: black !important; }
+            .print-border { border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            .page-break { page-break-before: always; }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-700 antialiased selection:bg-navy-800 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between selection:bg-navy-800 selection:text-white">
 
-    <header class="no-print sticky top-0 z-50 backdrop-blur-md bg-white/85 border-b border-slate-200/80 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-navy-900 transition-colors">
-                    ฐ
+    <header class="no-print bg-navy-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center font-bold text-lg text-blue-200 border border-white/20">
+                    <i class="fa-solid fa-graduation-cap text-sm"></i>
                 </div>
                 <div>
-                    <span class="font-heading font-semibold text-lg text-slate-900 tracking-tight block leading-tight">ฐิติวรดา ก่อแก้ว</span>
-                    <span class="text-[11px] text-slate-400 font-medium tracking-wide block">ACADEMIC PORTFOLIO</span>
+                    <h1 class="text-sm sm:text-base font-semibold leading-tight">นางสาวฐิติวรดา ก่อแก้ว</h1>
+                    <p class="text-xs text-blue-200">แฟ้มสะสมผลงานทางวิชาการ (Academic Portfolio)</p>
                 </div>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-navy-800 transition-colors py-1 border-b-2 border-transparent hover:border-navy-800">ข้อมูลส่วนตัว</a>
-                <a href="#education" class="hover:text-navy-800 transition-colors py-1 border-b-2 border-transparent hover:border-navy-800">ประวัติการศึกษา</a>
-                <a href="#family" class="hover:text-navy-800 transition-colors py-1 border-b-2 border-transparent hover:border-navy-800">ข้อมูลครอบครัว</a>
-                <a href="#contact" class="hover:text-navy-800 transition-colors py-1 border-b-2 border-transparent hover:border-navy-800">ช่องทางติดต่อ</a>
-            </nav>
-
-            <!-- Quick Action Buttons -->
-            <div class="hidden md:flex items-center space-x-3">
-                <button onclick="window.print()" class="px-4 py-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition duration-200 flex items-center gap-2">
-                    <i class="fa-solid fa-print"></i> พิมพ์ / เซฟ PDF
-                </button>
-                <a href="#contact" class="px-4 py-2 text-xs font-medium bg-navy-800 hover:bg-navy-900 text-white rounded-lg shadow-sm transition duration-200">
-                    ติดต่อฉัน
-                </a>
             </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
-            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">ข้อมูลส่วนตัว</a>
-            <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">ประวัติการศึกษา</a>
-            <a href="#family" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">ข้อมูลครอบครัว</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">ช่องทางติดต่อ</a>
-            <button onclick="window.print()" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 flex items-center gap-2">
-                <i class="fa-solid fa-print"></i> พิมพ์ / เซฟ PDF
-            </button>
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm px-3.5 py-1.5 rounded-lg transition duration-200 flex items-center gap-2 shadow-sm font-medium">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="hidden sm:inline">พิมพ์ / บันทึก PDF</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/60">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <main class="max-w-5xl mx-auto w-full px-4 py-6 sm:py-10 flex-grow space-y-8">
+
+        <!-- Personal Header Banner Card -->
+        <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 print-border relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-navy-50 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 
-                <!-- Profile Avatar Box -->
                 <div class="lg:col-span-4 flex flex-col items-center">
                     <div class="relative group">
-                        <div class="w-48 h-56 sm:w-56 sm:h-64 rounded-2xl bg-white shadow-md border-4 border-white overflow-hidden relative flex items-center justify-center print-border">
-                            <img id="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="นางสาวฐิติวรดา ก่อแก้ว" class="w-full h-full object-cover">
+                        <div class="w-52 h-68 sm:w-60 sm:h-80 rounded-2xl bg-slate-100 shadow-md border-4 border-white overflow-hidden relative flex items-center justify-center print-border">
+                            <!-- Student Photo linked directly from GitHub Repo -->
+                            <img id="profile-img" 
+                                 src="https://raw.githubusercontent.com/titiworada29/titi_port/main/IMG_4666.JPG" 
+                                 onerror="handleImageError(this)" 
+                                 alt="นางสาวฐิติวรดา ก่อแก้ว" 
+                                 class="w-full h-full object-cover object-top transition duration-300 group-hover:scale-105">
                             
                             <!-- Custom Image Upload Overlay -->
-                            <label for="image-upload" class="no-print absolute inset-0 bg-navy-900/65 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center text-white cursor-pointer p-4 text-center">
+                            <label for="image-upload" class="no-print absolute inset-0 bg-navy-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center text-white cursor-pointer p-4 text-center">
                                 <i class="fa-solid fa-camera text-2xl mb-1"></i>
-                                <span class="text-xs font-medium">คลิกเพื่ออัปโหลดรูปภาพ</span>
+                                <span class="text-xs font-medium">คลิกเพื่อเปลี่ยนรูปถ่าย</span>
                             </label>
                             <input type="file" id="image-upload" accept="image/*" class="hidden" onchange="previewImage(event)">
                         </div>
                         <div class="absolute -bottom-2 -right-2 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full shadow-sm font-medium border-2 border-white flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> นักศึกษา
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> นักเรียน ม.6
                         </div>
                     </div>
-                    <p class="no-print text-xs text-slate-400 mt-3 text-center">
-                        <i class="fa-solid fa-circle-info mr-1"></i> สามารถคลิกที่รูปเพื่ออัปโหลดเปลี่ยนรูปถ่ายได้
+                    <p class="no-print text-[11px] text-slate-400 mt-3 text-center max-w-xs">
+                        <i class="fa-solid fa-circle-info mr-1 text-blue-500"></i> ลิงก์รูปภาพ: <code class="bg-slate-100 text-navy-800 px-1 py-0.5 rounded font-mono font-semibold">IMG_4666.JPG</code> บน GitHub
                     </p>
                 </div>
 
-                <!-- Bio Header Info -->
-                <div class="lg:col-span-8 text-center lg:text-left space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy-50 text-navy-800 text-xs font-semibold tracking-wide border border-navy-100">
-                        <i class="fa-solid fa-graduation-cap"></i> แฟ้มสะสมผลงานนักเรียน/นักศึกษา
+                <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-navy-50 text-navy-800 text-xs px-3 py-1 rounded-full font-medium mb-3 border border-navy-100">
+                            <i class="fa-solid fa-graduation-cap"></i> แฟ้มสะสมผลงานนักเรียน (Academic Portfolio)
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight">นางสาวฐิติวรดา ก่อแก้ว</h2>
+                        <p class="text-slate-500 text-sm mt-1">ชื่อเล่น: <span class="font-semibold text-slate-700">LLWS</span> | อายุ: <span class="font-semibold text-slate-700">19 ปี</span></p>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-                        นางสาวฐิติวรดา ก่อแก้ว
-                        <span class="block text-xl sm:text-2xl font-normal text-slate-500 mt-1.5">ชื่อเล่น: <strong class="text-navy-800 font-semibold">LLWS</strong></span>
-                    </h1>
-                    <p class="text-slate-600 text-base max-w-2xl leading-relaxed">
-                        ยินดีต้อนรับสู่แฟ้มสะสมผลงานอิเล็กทรอนิกส์ (Academic Portfolio) รวบรวมข้อมูลประวัติส่วนตัว ประวัติการศึกษา ข้อมูลครอบครัว และช่องทางการติดต่อ สำหรับใช้ประกอบการศึกษาและการสมัครเรียน
+
+                    <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">
+                        เว็บไซต์สะสมผลงานและประวัติส่วนตัวอย่างเป็นทางการของ นางสาวฐิติวรดา ก่อแก้ว รวบรวมข้อมูลส่วนบุคคล ประวัติการศึกษา และช่องทางการติดต่อ เพื่อใช้สำหรับการศึกษาต่อและการแนะนำตัว
                     </p>
 
-                    <!-- Fast Info Badges -->
-                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3">
-                        <div class="bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-sm flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-cake-candles"></i>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-[11px] text-slate-400 font-medium">วันเกิด / อายุ</div>
-                                <div class="text-xs font-semibold text-slate-800">29 กรกฎาคม 2550 (อายุ 19 ปี)</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-sm flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-passport"></i>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-[11px] text-slate-400 font-medium">สัญชาติ / เชื้อชาติ</div>
-                                <div class="text-xs font-semibold text-slate-800">ไทย / ไทย</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-sm flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-[11px] text-slate-400 font-medium">จังหวัด</div>
-                                <div class="text-xs font-semibold text-slate-800">บุรีรัมย์</div>
-                            </div>
-                        </div>
+                    <!-- Quick Contact Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-2.5">
+                        <a href="tel:0925821019" class="inline-flex items-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs px-3.5 py-2 rounded-lg border border-slate-200 transition">
+                            <i class="fa-solid fa-phone text-blue-600"></i>
+                            <span>092-582-1019</span>
+                        </a>
+                        <a href="mailto:titiworadakor29@gmail.com" class="inline-flex items-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs px-3.5 py-2 rounded-lg border border-slate-200 transition">
+                            <i class="fa-solid fa-envelope text-blue-600"></i>
+                            <span>titiworadakor29@gmail.com</span>
+                        </a>
+                        <button onclick="copyToClipboard('titiworadakor29@gmail.com', 'คัดลอกอีเมลเรียบร้อยแล้ว!')" class="no-print inline-flex items-center gap-1.5 bg-navy-800 hover:bg-navy-900 text-white text-xs px-3.5 py-2 rounded-lg transition shadow-sm">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>คัดลอกอีเมล</span>
+                        </button>
                     </div>
-
                 </div>
             </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- General Info Card -->
+            <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 print-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                            <i class="fa-solid fa-id-card text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">ข้อมูลส่วนตัว (Personal Details)</h3>
+                    </div>
+
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                        <li class="flex justify-between py-1.5 border-b border-slate-50">
+                            <span class="text-slate-400">ชื่อ-นามสกุล</span>
+                            <span class="font-semibold text-slate-800">นางสาวฐิติวรดา ก่อแก้ว</span>
+                        </li>
+                        <li class="flex justify-between py-1.5 border-b border-slate-50">
+                            <span class="text-slate-400">ชื่อเล่น</span>
+                            <span class="font-semibold text-slate-800">LLWS</span>
+                        </li>
+                        <li class="flex justify-between py-1.5 border-b border-slate-50">
+                            <span class="text-slate-400">วันเกิด</span>
+                            <span class="font-semibold text-slate-800">29 กรกฎาคม 2550</span>
+                        </li>
+                        <li class="flex justify-between py-1.5 border-b border-slate-50">
+                            <span class="text-slate-400">อายุ</span>
+                            <span class="font-semibold text-slate-800">19 ปี</span>
+                        </li>
+                        <li class="flex justify-between py-1.5 border-b border-slate-50">
+                            <span class="text-slate-400">สัญชาติ</span>
+                            <span class="font-semibold text-slate-800">ไทย</span>
+                        </li>
+                        <li class="flex justify-between py-1.5">
+                            <span class="text-slate-400">เชื้อชาติ</span>
+                            <span class="font-semibold text-slate-800">ไทย</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 print-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-location-dot text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">ข้อมูลการติดต่อ & ที่อยู่</h3>
+                    </div>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-600">
+                        <div>
+                            <span class="text-xs text-slate-400 block mb-1">เบอร์โทรศัพท์ติดต่อ</span>
+                            <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                                <span class="font-semibold text-slate-800">092-582-1019</span>
+                                <button onclick="copyToClipboard('0925821019', 'คัดลอกเบอร์โทรศัพท์แล้ว!')" class="no-print text-xs text-blue-600 hover:text-blue-800 font-medium">
+                                    <i class="fa-regular fa-copy mr-1"></i> คัดลอก
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs text-slate-400 block mb-1">อีเมล (Email)</span>
+                            <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                                <span class="font-semibold text-slate-800 break-all">titiworadakor29@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs text-slate-400 block mb-1">ที่อยู่ปัจจุบัน</span>
+                            <p class="font-medium text-slate-800 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                บ้านติม ตำบลศรีภูมิ อำเภอกระสัง จังหวัดบุรีรัมย์
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-    </section>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 flex-grow">
-
-        <!-- SECTION 1: Personal Details (ข้อมูลส่วนตัว) -->
-        <section id="about" class="scroll-mt-20">
-            <div class="flex items-center gap-3 mb-6 border-b border-slate-200 pb-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                    <i class="fa-solid fa-user"></i>
+        <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 print-border">
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
+                    <i class="fa-solid fa-graduation-cap text-base"></i>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">ข้อมูลส่วนตัว</h2>
-                    <p class="text-xs text-slate-500">Personal Information & Contact Details</p>
+                    <h3 class="font-bold text-navy-900 text-lg">ประวัติการศึกษา (Educational Background)</h3>
+                    <p class="text-xs text-slate-400">เส้นทางการศึกษาตั้งแต่ระดับประถมศึกษาถึงมัธยมศึกษาตอนปลาย</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1: General Info -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm print-shadow-none">
-                    <h3 class="text-base font-semibold text-slate-800 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-address-card text-navy-800"></i> รายละเอียดทั่วไป
-                    </h3>
-                    <dl class="space-y-3 text-sm">
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500">ชื่อ-นามสกุล:</dt>
-                            <dd class="font-semibold text-slate-800">นางสาวฐิติวรดา ก่อแก้ว</dd>
+            <div class="relative pl-6 border-l-2 border-slate-200 space-y-8 my-2">
+                
+                <!-- Education Item 3 (Upper Secondary) -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-navy-800 border-4 border-white shadow-sm"></div>
+                    <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200/80 transition hover:border-navy-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h4 class="font-bold text-navy-900 text-sm sm:text-base">ระดับชั้นมัธยมศึกษาปีที่ 4 - 6</h4>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 w-fit">มัธยมศึกษาตอนปลาย</span>
                         </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500">ชื่อเล่น:</dt>
-                            <dd class="font-semibold text-slate-800">LLWS</dd>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500">วัน/เดือน/ปีเกิด:</dt>
-                            <dd class="font-medium text-slate-800">29 กรกฎาคม 2550</dd>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500">อายุ:</dt>
-                            <dd class="font-medium text-slate-800">19 ปี</dd>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500">สัญชาติ / เชื้อชาติ:</dt>
-                            <dd class="font-medium text-slate-800">ไทย / ไทย</dd>
-                        </div>
-                    </dl>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-800">โรงเรียนกระสังพิทยาคม</p>
+                        <p class="text-xs text-slate-500 mt-1">สำนักงานเขตพื้นที่การศึกษาประถมศึกษาบุรีรัมย์ เขต 2</p>
+                    </div>
                 </div>
 
-                <!-- Card 2: Contact Info & Address -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm print-shadow-none">
-                    <h3 class="text-base font-semibold text-slate-800 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-navy-800"></i> ช่องทางการติดต่อ & ที่อยู่
-                    </h3>
-                    <dl class="space-y-3 text-sm">
-                        <div class="flex justify-between py-1.5 border-b border-slate-50 items-center">
-                            <dt class="text-slate-500">เบอร์โทรศัพท์:</dt>
-                            <dd class="font-semibold text-slate-800 flex items-center gap-2">
-                                <span>092-582-1019</span>
-                                <button onclick="copyToClipboard('0925821019', 'คัดลอกเบอร์โทรเรียบร้อย!')" class="no-print text-xs text-navy-800 hover:text-navy-900 bg-navy-50 hover:bg-navy-100 px-2 py-1 rounded transition-colors" title="คัดลอกเบอร์โทร">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </dd>
+                <!-- Education Item 2 (Lower Secondary) -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
+                    <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200/80 transition hover:border-navy-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h4 class="font-bold text-navy-900 text-sm sm:text-base">ระดับชั้นมัธยมศึกษาปีที่ 1 - 3</h4>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-700 w-fit">มัธยมศึกษาตอนต้น</span>
                         </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50 items-center">
-                            <dt class="text-slate-500">อีเมล:</dt>
-                            <dd class="font-semibold text-slate-800 flex items-center gap-2">
-                                <span class="truncate max-w-[180px] sm:max-w-none">titiworadakor29@gmail.com</span>
-                                <button onclick="copyToClipboard('titiworadakor29@gmail.com', 'คัดลอกอีเมลเรียบร้อย!')" class="no-print text-xs text-navy-800 hover:text-navy-900 bg-navy-50 hover:bg-navy-100 px-2 py-1 rounded transition-colors" title="คัดลอกอีเมล">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </dd>
-                        </div>
-                        <div class="pt-1">
-                            <dt class="text-slate-500 mb-1">ที่อยู่ปัจจุบัน:</dt>
-                            <dd class="font-medium text-slate-800 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-start gap-2">
-                                <i class="fa-solid fa-house-chimney text-navy-800 mt-1"></i>
-                                <span>บ้านติม ตำบลศรีภูมิ อำเภอกระสัง จังหวัดบุรีรัมย์</span>
-                            </dd>
-                        </div>
-                    </dl>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-800">โรงเรียนกระสังพิทยาคม</p>
+                    </div>
                 </div>
+
+                <!-- Education Item 1 (Primary) -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
+                    <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200/80 transition hover:border-navy-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h4 class="font-bold text-navy-900 text-sm sm:text-base">ระดับชั้นประถมศึกษาปีที่ 1 - 6</h4>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-700 w-fit">ประถมศึกษา</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-800">โรงเรียนบ้านศรีภูมิสามัคคี</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="education" class="scroll-mt-20">
-            <div class="flex items-center gap-3 mb-6 border-b border-slate-200 pb-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                    <i class="fa-solid fa-graduation-cap"></i>
+        <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 print-border">
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                    <i class="fa-solid fa-users text-base"></i>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">ประวัติการศึกษา</h2>
-                    <p class="text-xs text-slate-500">Educational History Timeline</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm print-shadow-none">
-                <div class="relative border-l-2 border-navy-200 ml-4 sm:ml-6 space-y-8 my-2">
-                    
-                    <!-- Level 3: Upper Secondary -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-navy-800 ring-4 ring-white flex items-center justify-center text-white text-[10px]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 group-hover:border-navy-200 transition-colors">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full bg-navy-800 text-white text-xs font-semibold">
-                                    มัธยมศึกษาตอนปลาย
-                                </span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-800">ระดับชั้นมัธยมศึกษาปีที่ 4 - 6</h3>
-                            <p class="text-sm font-semibold text-slate-700 mt-1">โรงเรียนกระสังพิทยาคม</p>
-                            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i>อำเภอกระสัง จังหวัดบุรีรัมย์</p>
-                        </div>
-                    </div>
-
-                    <!-- Level 2: Lower Secondary -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-navy-500 ring-4 ring-white flex items-center justify-center text-white text-[10px]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 group-hover:border-navy-200 transition-colors">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full bg-navy-100 text-navy-800 text-xs font-semibold">
-                                    มัธยมศึกษาตอนต้น
-                                </span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-800">ระดับชั้นมัธยมศึกษาปีที่ 1 - 3</h3>
-                            <p class="text-sm font-semibold text-slate-700 mt-1">โรงเรียนกระสังพิทยาคม</p>
-                            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i>อำเภอกระสัง จังหวัดบุรีรัมย์</p>
-                        </div>
-                    </div>
-
-                    <!-- Level 1: Primary School -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-slate-400 ring-4 ring-white flex items-center justify-center text-white text-[10px]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 group-hover:border-navy-200 transition-colors">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-semibold">
-                                    ประถมศึกษา
-                                </span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-800">ระดับชั้นประถมศึกษาปีที่ 1 - 6</h3>
-                            <p class="text-sm font-semibold text-slate-700 mt-1">โรงเรียนบ้านศรีภูมิสามัคคี</p>
-                            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-landmark text-slate-400 mr-1"></i>สำนักงานเขตพื้นที่การศึกษาประถมศึกษาบุรีรัมย์ เขต 2</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="family" class="scroll-mt-20">
-            <div class="flex items-center gap-3 mb-6 border-b border-slate-200 pb-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900">ข้อมูลครอบครัว</h2>
-                    <p class="text-xs text-slate-500">Family Background</p>
+                    <h3 class="font-bold text-navy-900 text-lg">ข้อมูลครอบครัว (Family Background)</h3>
+                    <p class="text-xs text-slate-400">ข้อมูลรายละเอียดผู้ปกครอง บิดา และมารดา</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Father Card -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm print-shadow-none">
-                    <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div>
-                            <div class="text-[11px] text-slate-400 font-medium">ข้อมูลบิดา</div>
-                            <h3 class="text-lg font-bold text-slate-800">นายนัด ก่อแก้ว</h3>
-                        </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center gap-2 text-navy-800 font-bold text-sm border-b border-slate-200/60 pb-2">
+                        <i class="fa-solid fa-user-tie text-blue-600"></i>
+                        <span>ข้อมูลบิดา</span>
                     </div>
-                    <dl class="space-y-3 text-sm">
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500"><i class="fa-solid fa-briefcase text-slate-400 mr-2"></i>อาชีพ:</dt>
-                            <dd class="font-semibold text-slate-800">รับจ้าง</dd>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50 items-center">
-                            <dt class="text-slate-500"><i class="fa-solid fa-phone text-slate-400 mr-2"></i>เบอร์โทรศัพท์:</dt>
-                            <dd class="font-semibold text-slate-800 flex items-center gap-2">
-                                <span>093-708-5385</span>
-                                <a href="tel:0937085385" class="no-print text-xs text-blue-600 hover:text-blue-700 bg-blue-50 px-2 py-0.5 rounded transition-colors">
-                                    <i class="fa-solid fa-phone-flip"></i> โทร
-                                </a>
-                            </dd>
-                        </div>
-                    </dl>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">ชื่อ-นามสกุล:</span>
+                            <span class="font-semibold text-slate-800">นายนัด ก่อแก้ว</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">อาชีพ:</span>
+                            <span class="font-medium text-slate-800">รับจ้าง</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">เบอร์โทรศัพท์:</span>
+                            <a href="tel:0937085385" class="font-semibold text-blue-600 hover:underline">093-708-5385</a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Mother Card -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm print-shadow-none">
-                    <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3">
-                        <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-person-breastfeeding"></i>
-                        </div>
-                        <div>
-                            <div class="text-[11px] text-slate-400 font-medium">ข้อมูลมารดา</div>
-                            <h3 class="text-lg font-bold text-slate-800">นางนฤมล ก่อแก้ว</h3>
-                        </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center gap-2 text-navy-800 font-bold text-sm border-b border-slate-200/60 pb-2">
+                        <i class="fa-solid fa-user-nurse text-rose-600"></i>
+                        <span>ข้อมูลมารดา</span>
                     </div>
-                    <dl class="space-y-3 text-sm">
-                        <div class="flex justify-between py-1.5 border-b border-slate-50">
-                            <dt class="text-slate-500"><i class="fa-solid fa-wheat-awn text-slate-400 mr-2"></i>อาชีพ:</dt>
-                            <dd class="font-semibold text-slate-800">เกษตรกร</dd>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-slate-50 items-center">
-                            <dt class="text-slate-500"><i class="fa-solid fa-phone text-slate-400 mr-2"></i>เบอร์โทรศัพท์:</dt>
-                            <dd class="font-semibold text-slate-800 flex items-center gap-2">
-                                <span>093-346-9272</span>
-                                <a href="tel:0933469272" class="no-print text-xs text-rose-600 hover:text-rose-700 bg-rose-50 px-2 py-0.5 rounded transition-colors">
-                                    <i class="fa-solid fa-phone-flip"></i> โทร
-                                </a>
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-        </section>
-
-        <section id="activities" class="scroll-mt-20">
-            <div class="flex items-center gap-3 mb-6 border-b border-slate-200 pb-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900">เป้าหมายทางการศึกษาและกิจกรรม</h2>
-                    <p class="text-xs text-slate-500">Academic Goals & Activity Highlights</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm print-shadow-none space-y-6">
-                <div>
-                    <h3 class="text-base font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-bullseye text-amber-500"></i> เป้าหมายและความมุ่งมั่น (Academic Purpose)
-                    </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        มุ่งมั่นตั้งใจศึกษาเล่าเรียน พัฒนาทักษะความรู้ความสามารถในระดับอุดมศึกษา เพื่อสร้างรากฐานทางวิชาการและอาชีพที่มั่นคง พร้อมนำความรู้ไปประยุกต์ใช้เพื่อการพัฒนาตนเอง ชุมชน และสังคมอย่างสร้างสรรค์
-                    </p>
-                </div>
-
-                <div class="border-t border-slate-100 pt-6">
-                    <h3 class="text-base font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-award text-emerald-600"></i> หมวดหมู่ผลงานและเกียรติบัตร (Certificates & Activities)
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow group bg-slate-50/50">
-                            <div class="h-32 bg-navy-50 flex items-center justify-center text-navy-800 group-hover:bg-navy-100 transition-colors">
-                                <i class="fa-solid fa-certificate text-3xl"></i>
-                            </div>
-                            <div class="p-3.5">
-                                <div class="text-xs font-semibold text-slate-800">ผลงานทางวิชาการ</div>
-                                <div class="text-[11px] text-slate-500 mt-1">การเข้าร่วมอบรม แข่งขัน และกิจกรรมพัฒนาทักษะการเรียนรู้</div>
-                            </div>
-                        </div>
-
-                        <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow group bg-slate-50/50">
-                            <div class="h-32 bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-100 transition-colors">
-                                <i class="fa-solid fa-hands-holding-child text-3xl"></i>
-                            </div>
-                            <div class="p-3.5">
-                                <div class="text-xs font-semibold text-slate-800">กิจกรรมบำเพ็ญประโยชน์</div>
-                                <div class="text-[11px] text-slate-500 mt-1">จิตอาสาและกิจกรรมมีส่วนร่วมในโรงเรียนและชุมชน</div>
-                            </div>
-                        </div>
-
-                        <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow group bg-slate-50/50">
-                            <div class="h-32 bg-amber-50 flex items-center justify-center text-amber-600 group-hover:bg-amber-100 transition-colors">
-                                <i class="fa-solid fa-medal text-3xl"></i>
-                            </div>
-                            <div class="p-3.5">
-                                <div class="text-xs font-semibold text-slate-800">เกียรติบัตรและความภาคภูมิใจ</div>
-                                <div class="text-[11px] text-slate-500 mt-1">รางวัลและเกียรติบัตรแสดงความสามารถด้านต่างๆ</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="scroll-mt-20">
-            <div class="bg-navy-800 text-white rounded-2xl p-8 shadow-md text-center space-y-4 print-shadow-none">
-                <span class="inline-block px-3 py-1 bg-white/10 text-white text-xs rounded-full font-medium">พร้อมสำหรับการติดต่อสอบถาม</span>
-                <h2 class="text-2xl sm:text-3xl font-bold font-heading">ช่องทางการติดต่อ</h2>
-                <p class="text-slate-300 text-sm max-w-lg mx-auto">
-                    นางสาวฐิติวรดา ก่อแก้ว | โทร: 092-582-1019 | อีเมล: titiworadakor29@gmail.com
-                </p>
-                <div class="pt-2 flex justify-center flex-wrap gap-3 no-print">
-                    <a href="mailto:titiworadakor29@gmail.com" class="px-5 py-2.5 bg-white text-navy-800 font-semibold rounded-xl hover:bg-slate-100 transition duration-200 text-xs sm:text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-envelope"></i> ส่งอีเมล
-                    </a>
-                    <a href="tel:0925821019" class="px-5 py-2.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition duration-200 text-xs sm:text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-phone"></i> โทร 092-582-1019
-                    </a>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">ชื่อ-นามสกุล:</span>
+                            <span class="font-semibold text-slate-800">นางนฤมล ก่อแก้ว</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">อาชีพ:</span>
+                            <span class="font-medium text-slate-800">เกษตรกร</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">เบอร์โทรศัพท์:</span>
+                            <a href="tel:0933469272" class="font-semibold text-blue-600 hover:underline">093-346-9272</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="no-print border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 space-y-1">
-        <p>© Academic Portfolio - นางสาวฐิติวรดา ก่อแก้ว | พัฒนาด้วย Tailwind CSS สำหรับ GitHub Pages</p>
+    <footer class="bg-white border-t border-slate-200 py-6 mt-8 print-border">
+        <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-400 space-y-1">
+            <p>© Academic Portfolio - นางสาวฐิติวรดา ก่อแก้ว</p>
+            <p class="no-print">ออกแบบเพื่อรองรับการใช้งานบน GitHub Pages & พิมพ์เอกสาร A4</p>
+        </div>
     </footer>
 
-    <!-- Toast Alert Notification Box -->
-    <div id="toast" class="no-print fixed bottom-5 right-5 bg-navy-900 text-white px-4 py-3 rounded-xl shadow-xl text-xs flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <!-- Toast Notification Popup -->
+    <div id="toast" class="no-print fixed bottom-5 right-5 bg-navy-900 text-white text-xs px-4 py-3 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 pointer-events-none z-50">
         <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
-        <span id="toast-message">คัดลอกข้อความสำเร็จ</span>
+        <span id="toast-message">คัดลอกสำเร็จ!</span>
     </div>
 
     <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Automatic image error fallback handler with multiple fallback sources
+        function handleImageError(img) {
+            if (!img.dataset.tryIndex) {
+                img.dataset.tryIndex = "0";
+            }
+            const tryIndex = parseInt(img.dataset.tryIndex);
+            const fallbackSources = [
+                "https://github.com/titiworada29/titi_port/raw/main/IMG_4666.JPG",
+                "https://github.com/titiworada29/titi_port/blob/main/IMG_4666.JPG?raw=true",
+                "IMG_4666.JPG",
+                "student-photo.jpg",
+                "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600"
+            ];
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            if (tryIndex < fallbackSources.length) {
+                img.dataset.tryIndex = (tryIndex + 1).toString();
+                img.src = fallbackSources[tryIndex];
+            }
+        }
 
-        // Copy To Clipboard Handler
+        // Copy text to clipboard function
         function copyToClipboard(text, message) {
             const tempInput = document.createElement('input');
             tempInput.value = text;
@@ -528,31 +374,35 @@
             document.execCommand('copy');
             document.body.removeChild(tempInput);
 
-            showToast(message);
+            showToast(message || 'คัดลอกเรียบร้อยแล้ว!');
         }
 
-        // Show Toast Notification
-        function showToast(message) {
+        // Display Toast Notification
+        function showToast(msg) {
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toast-message');
-            toastMsg.textContent = message;
-            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toastMsg.innerText = msg;
             
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
             setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 2500);
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
         }
 
-        // Image Preview Handler
+        // Preview image uploaded by user locally
         function previewImage(event) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const output = document.getElementById('profile-img');
-                output.src = reader.result;
-            };
-            if(event.target.files && event.target.files[0]) {
-                reader.readAsDataURL(event.target.files[0]);
-                showToast('อัปโหลดและแสดงรูปภาพเรียบร้อย!');
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('profile-img');
+                    img.src = e.target.result;
+                    showToast('อัปโหลดรูปภาพตัวอย่างสำเร็จ!');
+                }
+                reader.readAsDataURL(input.files[0]);
             }
         }
     </script>
